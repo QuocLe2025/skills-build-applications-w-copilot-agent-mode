@@ -9,6 +9,7 @@ function Teams() {
 
   useEffect(() => {
     const controller = new AbortController()
+    // The backend API is expected at https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams
 
     fetchApi('teams', { signal: controller.signal })
       .then((payload) => {

@@ -9,6 +9,7 @@ function Activities() {
 
   useEffect(() => {
     const controller = new AbortController()
+    // The backend API is expected at https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities
 
     fetchApi('activities', { signal: controller.signal })
       .then((payload) => {
